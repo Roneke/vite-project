@@ -29,6 +29,22 @@ export function Content() {
     });
   };
 
+  const handleUpdatePost = (id, params) => {
+    axios
+      .patch(`http://localhost:3000/posts/${id}.json`, params)
+      .then((response) => {
+        setPosts(
+          posts.map((post) => {
+            if (post.id === response.data.id) {
+              return response.data;
+            } else {
+              return post;
+            }
+          })
+        );
+      });
+  };
+
   const handleClose = () => {
     setIsPostsShowVisible(false);
   };
@@ -42,7 +58,11 @@ export function Content() {
       <SignUp />
       <PostIndex posts={posts} onSelect={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <PostShow post={currentPost} />
+        <PostShow
+          post={currentPost}
+          onUpdatePost={handleUpdatePost}
+          closeModal={handleClose}
+        />
       </Modal>
     </div>
   );
