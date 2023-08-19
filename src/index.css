@@ -19,3 +19,7 @@ html {
 #root {
   background-image:url("src/assets/back-im.jpeg");
 }
+
+.nav-link{
+  color: white !important;
+}

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function Header() {
   return (
     <nav
@@ -22,44 +24,39 @@ export function Header() {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to="#">
               HOME <span className="sr-only">(current)</span>
-            </a>
+            </Link>
+          </li>
+          <li className="nav-item active">
+            <Link className="nav-link" to="/SignUp">
+              SignUp <span className="sr-only"></span>
+            </Link>
+          </li>
+          <li className="nav-item active">
+            <Link className="nav-link" to="/about">
+              About <span className="sr-only"></span>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to="/posts">
               ALL POST
-            </a>
+            </Link>
           </li>
-          <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Dropdown
-            </a>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item" href="#">
-                CREATE POST
-              </a>
-              <a className="dropdown-item" href="#">
-                Another action
-              </a>
-              <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#">
-                Something else here
-              </a>
-            </div>
+          <li className="nav-item active">
+            <Link className="nav-link" to="/post/new">
+              Create Post <span className="sr-only"></span>
+            </Link>
           </li>
-          <li className="nav-item">
-            <a className="nav-link disabled" href="#">
-              Disabled
-            </a>
+          <li className="nav-item active">
+            <Link className="nav-link" to="/Login">
+              Login <span className="sr-only"></span>
+            </Link>
+          </li>
+          <li className="nav-item active">
+            <Link className="nav-link" to="/Logout">
+              Logout <span className="sr-only"></span>
+            </Link>
           </li>
         </ul>
       </div>

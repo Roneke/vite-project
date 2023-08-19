@@ -6,7 +6,9 @@ export function PostShow(props) {
     props.closeModal();
     event.target.reset();
   };
-
+  const handleClick = () => {
+    props.onDestroyPost(props.post.id);
+  };
   return (
     <div id="posts-show">
       <h1>Update</h1>
@@ -25,6 +27,7 @@ export function PostShow(props) {
         </div>
         <button type="submit">Edit</button>
       </form>
+      <button onClick={handleClick}>Delete Product</button>
     </div>
   );
 }
